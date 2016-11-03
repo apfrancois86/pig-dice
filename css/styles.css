@@ -1,3 +1,35 @@
 #player1Wins, #player2Wins {
   display: none;
 }
+
+body {
+  background-color: #ffd89b
+
+}
+
+.jumbotron {
+  text-align: center;
+  font-family: 'Bungee Hairline', cursive;
+  font-size: 10em;
+  color: #FFF;
+  background-color: #19547b;
+
+}
+
+#game img {
+  width: 350px;
+  float:right;
+}
+
+#scores h4 {
+text-align: center;
+}
+
+#scores h2 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#player1Wins img, #player2Wins img {
+  width: 500px;
+}

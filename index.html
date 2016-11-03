@@ -5,13 +5,15 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline" rel="stylesheet">
     <title>Pig Dice</title>
   </head>
   <body>
     <div class="container">
       <div id="game">
-        <h1>Pig Dice!</h1>
-        <h4>Rules:</h4>
+        <h1 class="jumbotron">Pig Dice!</h1>
+        <img src="img/pig.jpg" alt="pig">
+        <h2>Rules:</h4>
         <ul>
           <li>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold".</li>
           <li>If the player rolls a 1, they score nothing for that round and it becomes the next player's turn.</li>
@@ -27,7 +29,7 @@
             <button type="click" class="btn btn-primary" id="hold">Hold</button>
             <h4>Who's turn is it? <span id="whosTurn"></span></h4>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" id="scores">
             <h2>Score</h2>
             <h4>Player 1 Round Score: <span id="player1round"></span></h4>
             <h4>Player 1 Total Score: <span id="player1Total"></span></h4>
@@ -39,10 +41,12 @@
       <div id="player1Wins">
         <h1>Player 1 wins!!</h1>
         <button type="click" class="btn btn-primary">Play Again?</button>
+        <img src="img/dancing-pig.jpg" alt="dancing pig">
       </div>
       <div id="player2Wins">
         <h1>Player 2 wins!!</h1>
         <button type="click" class="btn btn-primary">Play Again?</button>
+        <img src="img/dancing-pig.jpg" alt="dancing pig">
       </div>
     </div>
   </body>
