@@ -50,6 +50,4 @@ _The rules of Pig Dice are:_
 
 ### License
 
-*This software is licensed under the **_Mind Your Own Beeswax license._***
-
-Copyright (c) 2016 Maldoh Meehan & Sam Park
+Copyright (c) 2016 Alex Francois
