@@ -10,3 +10,7 @@ var player2= new Player(0,0,0,false);
 Player.prototype.rollDice = function() {
   this.rollScore = Math.floor(Math.random() * 6);
 }
+
+player.prototype.turnScore = function() {
+  
+}

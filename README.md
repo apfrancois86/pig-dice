@@ -32,8 +32,6 @@ _The rules of Pig Dice are:_
 | Button to switch players (i.e clicking hold or rolling 1 will toggle/show/hide to the other player) | click player 1 or player 2 | switched between players|
 | Create an if statement that stops game when a player reaches 100 or more | player reaches 100 or more | You win!|
 
-## Objectives
-*
 
 ## Setup/Installation Requirements
 
@@ -41,12 +39,6 @@ _The rules of Pig Dice are:_
 * Open a HTML file
 * Open web browser of choice
 
-## Known Bugs
-
-
-## Support and contact details
-
-##### [apfrancois86@gmail.com]
 
 ## Technologies Used
 
