@@ -1,8 +1,8 @@
 # _Pig Dice_
 
-#### _Re-creating the game of Pig Dice _
+#### Re-creating the game of Pig Dice 
 
-#### By _**Alex Francois**
+#### By **Alex Francois**
 
 
 ## Description

@@ -13,58 +13,93 @@ Player.prototype.rollDice = function() {
   this.rollScore = Math.floor((Math.random() * 6)+1);
 }
 
-Player.prototype.turnScore = function() {
+Player.prototype.turnScore = function(roundScore, rollScore) {
   if (this.rollScore === 1)  {
-    this.roundScore === 0;
-  } else {
+    this.roundScore = 0;
+  } else  {
     this.roundScore += this.rollScore;
   }
 }
 
-Player.prototype.totalCalculator = function() {
+Player.prototype.finalScore = function(totalScore, roundScore) {
   this.totalScore += this.roundScore;
+  this.roundScore = 0;
 }
+
 
 Player.prototype.playerSwitch = function () {
     this.activePlayer = false;
 }
 
-// while (player1.activePlayer === true) {
-//
-// }
+
 
 //UI logic
 $(function(){
+
   $("#roll").click(function(){
   event.preventDefault();
-  $(".playerturn").text(this.Player);
+  // while (player1.activePlayer === true) {
+  //   $("#whosTurn").text("Player 1");
+  // }
   if (player1.activePlayer === true) {
+      $("#whosTurn").text("Player 1");
       player1.rollDice();
-      if (player1.rollScore === 1){
-        player1.playerSwitch();
-      }
       player1.turnScore(player1.rollScore);
       $("#die1").text(player1.rollScore);
       $("#player1round").text(player1.roundScore);
-
+      if (player1.rollScore === 1){
+        player1.playerSwitch();
+        $("#whosTurn").text("Player 2");
+      }
     } else if (player1.activePlayer === false)  {
+        $("#whosTurn").text("Player 2");
         player2.rollDice();
+        player2.turnScore(player2.rollScore);
+        $("#die1").text(player2.rollScore);
+        $("#player2round").text(player2.roundScore);
           if (player2.rollScore === 1) {
             player2.playerSwitch();
             player1.activePlayer = true;
           }
-        player2.turnScore(player2.rollScore);
-        $("#die1").text(player2.rollScore);
-        $("#player2round").text(player2.roundScore);
-    }
-
-    else {
+    } else {
      console.log("not working");
     }
+    if (player1.totalScore >= 100) {
+      $("#player1Wins").show();
+      $("#game").hide();
+    } else if (player2.totalScore >= 100){
+        $("#player2Wins").show();
+        $("#game").hide();
+        }
   });
+
   $("#hold").click(function(event){
     event.preventDefault();
+    if (player1.activePlayer === true) {
+      player1.finalScore();
+      $("#player1Total").text(player1.totalScore);
+      $("#player1round").empty();
+      player1.playerSwitch();
+      player2.activePlayer = true;
+      $("#whosTurn").text("Player 2");
+    } else if (player1.activePlayer === false){
+      player2.finalScore();
+      $("#player2Total").text(player2.totalScore);
+      $("#player2round").empty();
+      player2.playerSwitch();
+      player1.activePlayer = true;
+      $("#whosTurn").text("Player 1");
+    } else {
+      console.log("not working here");
+    }
+  });
 
+  $("#player1Wins button").click(function(){
+    location.reload();
+  });
+
+  $("#player2Wins button").click(function(){
+    location.reload();
   });
 
 });

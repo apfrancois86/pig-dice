@@ -9,29 +9,41 @@
   </head>
   <body>
     <div class="container">
-   <h1>Pig Dice!</h1>
-   <div><h4>Rules:</h4></div>
-   <ul>
-     <li>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold".</li>
-     <li>If the player rolls a 1, they score nothing for that round and it becomes the next player's turn.</li>
-     <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
-     <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
-     <li>The first player to score 100 or more points wins.</li>
-   </ul>
-   <div class="row">
-     <div class="col-md-6">
-       <h2>Play</h2>
-         <!-- <h4 class="display">Display</h4> -->
-         <div id="die1" class="dice"></div>
-         <button type="click" class="btn btn-primary" id="roll">Roll dice</button>
-         <button type="click" class="btn btn-primary" id="hold">Hold</button>
-         <h4 class="playerturn">Who's turn is it?</h4>
-     </div>
-     <div class="col-md-6">
-       <h2>Score</h2>
-       <h4>Player 1 Score: <span id="player1round"></span></h4>
-       <h4>Player 2 Score: <span id="player2round"></span></h4>
+      <div id="game">
+        <h1>Pig Dice!</h1>
+        <h4>Rules:</h4>
+        <ul>
+          <li>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold".</li>
+          <li>If the player rolls a 1, they score nothing for that round and it becomes the next player's turn.</li>
+          <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+          <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+          <li>The first player to score 100 or more points wins.</li>
+        </ul>
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Play</h2>
+            <div id="die1" class="dice"></div>
+            <button type="click" class="btn btn-primary" id="roll">Roll dice</button>
+            <button type="click" class="btn btn-primary" id="hold">Hold</button>
+            <h4>Who's turn is it? <span id="whosTurn"></span></h4>
+          </div>
+          <div class="col-md-6">
+            <h2>Score</h2>
+            <h4>Player 1 Round Score: <span id="player1round"></span></h4>
+            <h4>Player 1 Total Score: <span id="player1Total"></span></h4>
+            <h4>Player 2 Round Score: <span id="player2round"></span></h4>
+            <h4>Player 2 Total Score: <span id="player2Total"></span></h4>
+          </div>
+        </div>
       </div>
-   </div>
+      <div id="player1Wins">
+        <h1>Player 1 wins!!</h1>
+        <button type="click" class="btn btn-primary">Play Again?</button>
+      </div>
+      <div id="player2Wins">
+        <h1>Player 2 wins!!</h1>
+        <button type="click" class="btn btn-primary">Play Again?</button>
+      </div>
+    </div>
   </body>
 </html>
