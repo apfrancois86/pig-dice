@@ -38,15 +38,17 @@ $(function(){
 
   $("#roll").click(function(){
   event.preventDefault();
-  // while (player1.activePlayer === true) {
-  //   $("#whosTurn").text("Player 1");
-  // }
+
   if (player1.activePlayer === true) {
       $("#whosTurn").text("Player 1");
       player1.rollDice();
       player1.turnScore(player1.rollScore);
       $("#die1").text(player1.rollScore);
       $("#player1round").text(player1.roundScore);
+      if (player1.totalScore + player1.roundScore >= 100) {
+        $("#player1Wins").show();
+        $("#game").hide();
+      }
       if (player1.rollScore === 1){
         player1.playerSwitch();
         $("#whosTurn").text("Player 2");
@@ -57,20 +59,18 @@ $(function(){
         player2.turnScore(player2.rollScore);
         $("#die1").text(player2.rollScore);
         $("#player2round").text(player2.roundScore);
+        if (player2.roundScore + player2.totalScore >= 100){
+            $("#player2Wins").show();
+            $("#game").hide();
+            }
           if (player2.rollScore === 1) {
             player2.playerSwitch();
             player1.activePlayer = true;
+            $("#whosTurn").text("Player 1");
           }
     } else {
      console.log("not working");
     }
-    if (player1.totalScore >= 100) {
-      $("#player1Wins").show();
-      $("#game").hide();
-    } else if (player2.totalScore >= 100){
-        $("#player2Wins").show();
-        $("#game").hide();
-        }
   });
 
   $("#hold").click(function(event){
